@@ -54,7 +54,7 @@ function displayWeather(cityName) {
         console.log(forecastArr[i]);
 
         var cardTitle = document.getElementById("card-title" + j);
-        // console.log("card-title" + j);
+        console.log("card-title" + j);
         // dynamic city title
         cardTitle.textContent = dayjs.unix(forecastArr[i].dt).format("MM/DD/YYYY ");
 
