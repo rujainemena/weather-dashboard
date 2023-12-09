@@ -5,7 +5,8 @@ var windEl = document.getElementById("wind");
 var humidityEl = document.getElementById("humidity");
 var searchBtn = document.getElementById("search-btn");
 var cityInput = document.getElementById("city-input");
-var fivedayForecast = document.getElementById("fiveday-forecast");
+var cityList = document.getElementById("city-list");
+// var cities = JSON.parse(localStorage.getItem("cities")) || [];
 
 // search button function
 function searchCity() {
@@ -17,7 +18,11 @@ function searchCity() {
 function displayWeather(cityName) {
   // main weather display
   var url =
-    "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    cityName +
+    "&appid=" +
+    apiKey +
+    "&units=imperial";
 
   fetch(url)
     .then(function (response) {
@@ -52,13 +57,14 @@ function displayWeather(cityName) {
 
       for (let i = 3, j = 1; i < forecastArr.length; i = i + 8, j++) {
         console.log(forecastArr[i]);
-
+        // dynamic date
         var cardTitle = document.getElementById("card-title" + j);
         console.log("card-title" + j);
-        // dynamic city title
-        cardTitle.textContent = dayjs.unix(forecastArr[i].dt).format("MM/DD/YYYY ");
+        cardTitle.textContent = dayjs
+          .unix(forecastArr[i].dt)
+          .format("MM/DD/YYYY ");
 
-        //   dynamic temperature 
+        //   dynamic temperature
         var temp = document.getElementById("temp" + j);
         temp.textContent = forecastArr[i].main.temp;
 
@@ -73,5 +79,15 @@ function displayWeather(cityName) {
     });
 }
 
+// saves cities to local storage
+function renderCity() {
+  var city = localStorage.getItem("city");
+  if (!city) {
+    return;
+  }
+  cityList.textContent = city;
+}
+
 // event listeners
 searchBtn.addEventListener("click", searchCity);
+renderCity();
