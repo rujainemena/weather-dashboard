@@ -5,6 +5,8 @@
 
 Look up your city's weekly forecast using the Weather Dashboard. In this app you can look up the current and future weather updates so that you can prepare for the work week ahead. 
 
+![weather dashboard](./assets/images/weather-dash.png)
+
 
 ## Table of Contents 
   - [Usage](#usage)
