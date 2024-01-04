@@ -3,7 +3,7 @@
 
 ## Description
 
-Look up your city's weekly forecast using the Weather Dashboard. In this app you can look up the current and future weather updates so that you can prepare for the work week ahead. 
+Look up your city's weekly forecast using the Weather Dashboard. In this app you can look up the current and future weather updates so that you can prepare for the work week ahead. Explore app: https://rujainemena.github.io/weather-dashboard/
 
 ![weather dashboard](./assets/images/weather-dash.png)
 
